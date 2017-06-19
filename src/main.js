@@ -14,6 +14,7 @@ import Waimai from './components/Waimai.vue';
 import Find from './components/Find.vue';
 import Order from './components/Order.vue';
 import My from './components/My.vue';
+import Shop from './components/Shop.vue';
 
 
 //4.配置路由
@@ -21,10 +22,11 @@ import My from './components/My.vue';
 
 const routes = [
   { path: '/waimai', component: Waimai},
-  { path: '/find', component: Find },
+  { path: '/find', component:Find},
   { path: '/order',component:Order},
   { path: '/my',component:My},
-  { path: '/',component:Waimai}
+  { path: '/',component:Waimai},
+  { path: '/shop',component:Shop}
 ]
 
 
