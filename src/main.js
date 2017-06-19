@@ -10,9 +10,7 @@ Vue.use(VueRouter);  /*必须得use*/
 
 
 //3.引入组件。
-
 import Waimai from './components/Waimai.vue';
-  import Shop from './components/Shop.vue';
 import Find from './components/Find.vue';
 import Order from './components/Order.vue';
 import My from './components/My.vue';
@@ -22,11 +20,7 @@ import My from './components/My.vue';
 
 
 const routes = [
-  { path: '/waimai', component: Waimai,
-   children:[
-     {path:'shop',component:Shop}
-   ]
-},
+  { path: '/waimai', component: Waimai},
   { path: '/find', component: Find },
   { path: '/order',component:Order},
   { path: '/my',component:My},

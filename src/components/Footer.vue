@@ -1,16 +1,15 @@
-<template>
-  <div id="app">
-   <router-view></router-view>
-  </div>
+<template> 
+    <div class="footer">
+      <router-link to="/waimai">外卖</router-link>
+      <router-link to="/find">发现</router-link>
+      <router-link to="/order">订单</router-link>
+      <router-link to="/my">我的</router-link>
+   </div>
 </template>
 
-<script>
-   
 
-</script>
-
-<style>
-html,body{
+<style scoped>
+ html,body{
   width:100%;
   height:100%;
   background:#f4f5f5;
