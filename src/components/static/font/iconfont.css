@@ -25,15 +25,15 @@
 
 .icon-gouwuche:before { content: "\e654";font-size:1rem;color:#fff;border-radius: 50%;}
 
-.icon-iconfontwohover:before { content: "\e60d"; font-size:0.6rem;}
+.icon-iconfontwohover:before { content: "\e60d"; font-size:2rem;}
 
-.icon-dingwei:before { content: "\e604";font-size:0.6rem; }
+.icon-dingwei:before { content: "\e604";font-size:0.6rem;color:#fff; }
 
 .icon-444:before { content: "\e61b"; font-size:0.6rem;}
 
 .icon-comiissjt:before { content: "\e67f";font-size:0.6rem; }
 
-.icon-tianqi:before { content: "\e62e";font-size:0.6rem; }
+.icon-tianqi:before { content: "\e62e";font-size:0.8rem;color:#fff }
 
 .icon-changyonglogo40:before { content: "\e600";font-size:0.6rem; }
 

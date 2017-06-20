@@ -1,0 +1,32 @@
+<template>
+  <div>
+     <section class="head">
+           <router-link to="/my" class="icon iconfont icon-comiissjt"></router-link><h2>登录</h2>
+     </section>
+    <form>
+        <label>
+            <input type="text" name="account" value="" placeholder="手机号">
+            <a href="">获取验证码</a>
+        </label>
+        <label>
+            <input type="password" name="account" value="" placeholder="验证码">
+        </label>
+        <label>
+           <span>温馨提示，未注册饿了么账号的手机号，登录时讲自动注册，且代表您以同意<a href="">《用户服务协议》</a></span>
+        </label>
+        <label>
+            <input type="submit" value="登录">
+        </label>
+    </form>
+  </div>
+</template>
+
+<style scoped>
+    .head a{
+        position:absolute;
+        top:0.3rem;
+        left:0.3rem;
+        color:#fff;
+    }
+</style>
+

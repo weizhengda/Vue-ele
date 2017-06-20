@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
 
 
 //1.安装 vue-router
@@ -7,6 +9,7 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);  /*必须得use*/
+Vue.use(MintUI);
 
 
 //3.引入组件。
@@ -14,7 +17,8 @@ import Waimai from './components/Waimai.vue';
 import Find from './components/Find.vue';
 import Order from './components/Order.vue';
 import My from './components/My.vue';
-import Shop from './components/Shop.vue';
+import Shop from './components/Waimai/Shop.vue';
+import Login from './components/My/Login.vue';
 
 
 //4.配置路由
@@ -26,7 +30,8 @@ const routes = [
   { path: '/order',component:Order},
   { path: '/my',component:My},
   { path: '/',component:Waimai},
-  { path: '/shop',component:Shop}
+  { path: '/shop',component:Shop},
+  { path: '/login',component:Login}
 ]
 
 
