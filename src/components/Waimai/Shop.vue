@@ -24,7 +24,7 @@
                    <ul>
                         <li>吮指原味鸡</li>
                         <li class="li2">月售100份，好评率100%</li>
-                        <li class="li3"><span>￥20</span><i class="icon iconfont icon-jian "></i><b>0</b><i class="icon iconfont icon-54 "></i></li>
+                        <li class="li3"><span>￥20</span><i @click="less" class="icon iconfont icon-jian "></i><b v-model="order">0</b><i @click="more" class="icon iconfont icon-54 "></i></li>
                   </ul>
        </div>
      </div>
@@ -48,7 +48,8 @@
              return{
                 isFav:false,
                 text:'收藏',
-                shop:""
+                shop:"",
+                order:0
              };
         },
         methods:{
@@ -61,6 +62,12 @@
                 }else{
                     this.text="收藏";
                 }
+            },
+            more:function(){
+               this.order = this.order+1;
+            },
+            less:function(){
+               this.less = this.order-1;
             },
            requestData:function(_id){  /*请求数据*/
 
@@ -82,7 +89,7 @@
            
             console.log(this.$route.params._id);  /*获取动态路由的值*/
 
-            this.requestData(this.$route.params._id);
+            //this.requestData(this.$route.params._id);
         }
     }
 </script>

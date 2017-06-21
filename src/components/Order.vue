@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header">
-              <h2>订单</h2>
+              <router-link to="/waimai" class="icon iconfont icon-comiissjt"></router-link><h2>订单</h2>
         </div>
      <div class="footer">
     
