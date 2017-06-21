@@ -24,7 +24,7 @@
                    <ul>
                         <li>吮指原味鸡</li>
                         <li class="li2">月售100份，好评率100%</li>
-                        <li class="li3"><span>￥0</span><i class="icon iconfont icon-jian "></i><b>0</b><i class="icon iconfont icon-54 "></i></li>
+                        <li class="li3"><span>￥20</span><i class="icon iconfont icon-jian "></i><b>0</b><i class="icon iconfont icon-54 "></i></li>
                   </ul>
        </div>
      </div>
@@ -66,10 +66,10 @@
 
              var _that=this;
 
-              var url='http://127.0.0.1:4000/shop'+_id;
+              var url='http://127.0.0.1:4000/shop/_id='+_id;
+              console.log(_id);
               this.$http.jsonp(url).then((res)=>{
                     console.log(res.data);
-
                     _that.shop=res.data[0];
 
               },(err)=>{

@@ -38,7 +38,7 @@
               var u_pwd = _that.u_pwd;
               console.log(u_phone);
               var url='localhost:4000/user'+u_phone&&u_pwd;
-              this.$http.jsonp(url,{jsonp:"_callback"}).then((res)=>{
+              this.$http.jsonp(url).then((res)=>{
                   console.log(res);
               },(err)=>{
                   console.log(err);

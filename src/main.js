@@ -32,7 +32,7 @@ const routes = [
   { path: '/order',component:Order},
   { path: '/my',component:My},
   { path: '/',component:Waimai},
-  { path: '/shop/:id',component:Shop},
+  { path: '/shop/:_id',component:Shop},
   { path: '/login',component:Login}
 ]
 
