@@ -26,8 +26,12 @@ html,body{
    top:0.3rem;
    right:1.5rem;
 }
-.shop-header .item .fav i{
+.shop-header .item .fav .i1{
   font-size:0.6rem;
+}
+.shop-header .item .fav .i2{
+  font-size:0.6rem;
+  color:red;
 }
 .shop-header .item .fav span{
    color:#000;

@@ -7,8 +7,10 @@ import 'mint-ui/lib/style.css';
 //1.安装 vue-router
 //2.引入模块
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 
 Vue.use(VueRouter);  /*必须得use*/
+Vue.use(VueResource);
 Vue.use(MintUI);
 
 
@@ -30,7 +32,7 @@ const routes = [
   { path: '/order',component:Order},
   { path: '/my',component:My},
   { path: '/',component:Waimai},
-  { path: '/shop',component:Shop},
+  { path: '/shop/:id',component:Shop},
   { path: '/login',component:Login}
 ]
 

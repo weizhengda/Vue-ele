@@ -3,7 +3,9 @@
       <div class="shop-header">
        <div href="#" class="item">
            <a href="/" class="icon iconfont icon-comiissjt"></a>
-           <div class="fav"><i class="icon iconfont icon-aixin"></i><span>收藏</span></div>
+           <div class="fav" @click="change()">
+               <i class="i1 icon iconfont icon-aixin"  v-bind:class="{ 'i1' : isFav, 'i2': !isFav}" @click="toggle"></i>
+           </div>
            <img src="../static/images/img1.jpeg" alt="">
            <ul>
                <li><h2>台滋味（深圳西丽店）</h2></li>
@@ -22,17 +24,16 @@
                    <ul>
                         <li>吮指原味鸡</li>
                         <li class="li2">月售100份，好评率100%</li>
-                        <li class="li3"><span>￥13</span><i class="icon iconfont icon-jian "></i><b>0</b><i class="icon iconfont icon-54 "></i></li>
+                        <li class="li3"><span>￥0</span><i class="icon iconfont icon-jian "></i><b>0</b><i class="icon iconfont icon-54 "></i></li>
                   </ul>
        </div>
      </div>
-    
   </section>
          
     <div class="footer">
       <div class="left">
           <i class="icon iconfont icon-gouwuche "></i>
-          <span>￥13</span>
+          <span>￥0</span>
       </div>
       <div class="right">
           <a href="#">去结算</a>
@@ -40,6 +41,51 @@
   </div>
    </div>
 </template>
+
+<script>
+    export default{
+        data:function(){
+             return{
+                isFav:false,
+                text:'收藏',
+                shop:""
+             };
+        },
+        methods:{
+            toggle:function(){
+                this.isFav = !this.isFav;
+            },
+            change:function(){
+                if(this.text="收藏"){
+                    this.text="已收藏"
+                }else{
+                    this.text="收藏";
+                }
+            },
+           requestData:function(_id){  /*请求数据*/
+
+             var _that=this;
+
+              var url='http://127.0.0.1:4000/shop'+_id;
+              this.$http.jsonp(url).then((res)=>{
+                    console.log(res.data);
+
+                    _that.shop=res.data[0];
+
+              },(err)=>{
+                   console.log(err);
+              })
+          }
+
+        },
+        mounted:function(){
+           
+            console.log(this.$route.params._id);  /*获取动态路由的值*/
+
+            this.requestData(this.$route.params._id);
+        }
+    }
+</script>
 
 <style scoped>
   @import '../static/css/base.css';

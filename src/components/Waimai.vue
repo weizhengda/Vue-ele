@@ -18,28 +18,27 @@
             </div>
     
         </header>
-       <swiper></swiper>
+
         <section id="content">
     
             <h2>推荐商家</h2>
-    
-            <router-link to="/shop" class="item">
-    
+            <div  v-for="item in shopList" >
+            <router-link :to="'/shop/'+item._id" class="item">
                 <img src="./static/images/img1.jpeg" alt="">
     
                 <ul>
     
                     <li>
     
-                        <h2>肯德基宅急送</h2>
+                        <h2>{{item.title}}</h2>
     
                     </li>
     
-                    <li class="li2">5分
+                    <li class="li2">{{item.grade}}分
     
-                        <span>月售100单</span></li>
+                        <span>月售{{item.count}}单</span></li>
     
-                    <li class="li3">￥20元起送/ 配送费￥5 ￥20/人
+                    <li class="li3">￥20元起送/ 配送费￥5 ￥{{item.price}}/人
     
                         <span>30分钟</span>
     
@@ -48,96 +47,19 @@
                 </ul>
     
             </router-link>
-    
-            <a class="item" href="">
-    
-                <img src="./static/images/img1.jpeg">
-    
-                <ul>
-    
-                    <li>
-    
-                        <h2>肯德基宅急送</h2>
-    
-                    </li>
-    
-                    <li class="li2">5分
-    
-                        <span>月售100单</span></li>
-    
-                    <li class="li3">￥20元起送/ 配送费￥5 ￥20/人
-    
-                        <span>30分钟</span>
-    
-                    </li>
-    
-                </ul>
-    
-            </a>
-    
-            <a class="item" href="">
-    
-                <img src="./static/images/img1.jpeg">
-    
-                <ul>
-    
-                    <li>
-    
-                        <h2>肯德基宅急送</h2>
-    
-                    </li>
-    
-                    <li class="li2">5分
-    
-                        <span>月售100单</span></li>
-    
-                    <li class="li3">￥20元起送/ 配送费￥5 ￥20/人
-    
-                        <span>30分钟</span>
-    
-                    </li>
-    
-                </ul>
-    
-            </a>
-    
-            <a class="item" href="">
-    
-                <img src="./static/images/img1.jpeg">
-    
-                <ul>
-    
-                    <li>
-    
-                        <h2>肯德基宅急送</h2>
-    
-                    </li>
-    
-                    <li class="li2">5分
-    
-                        <span>月售100单</span></li>
-    
-                    <li class="li3">￥20元起送/ 配送费￥5 ￥20/人
-    
-                        <span>30分钟</span>
-    
-                    </li>
-    
-                </ul>
-    
-            </a>
+            </div>
     
         </section>
     
-        <div class="footer">
+       <div class="footer">
     
-            <router-link to="/waimai">外卖</router-link>
+            <router-link to="/waimai"><i class="icon iconfont icon-changyonglogo40"></i><span>外卖</span></router-link>
     
-            <router-link to="/find">发现</router-link>
+            <router-link to="/find"><i class="icon iconfont icon-444"></i><span>发现</span></router-link>
     
-            <router-link to="/order">订单</router-link>
+           <router-link to="/order"><i class="icon iconfont icon-order"></i><span>订单</span></router-link>
     
-            <router-link to="/my">我的</router-link>
+            <router-link to="/my"><i class="icon iconfont icon-iconfontwohover"></i><span>我的</span></router-link>
     
         </div>
     
@@ -152,14 +74,35 @@
         data() {
     
             return {
-    
-                msg: 'this is home'
+             
+              shopList:""
     
             }
     
         },
+       methods:{
+
+          requestData:function(){  /*请求数据*/
+
+             var _that=this;
+
+              var url='http://127.0.0.1:4000';
+              this.$http.jsonp(url).then((res)=>{
+                    console.log(res.data);
+
+                    _that.shopList=res.data;
+
+              },(err)=>{
+                   console.log(err);
+              })
+          }
+
+        }
+        ,mounted:function(){
+            this.requestData();
+          },
        components:{
-           'swiper':Swiper
+           'swiper':Swiper,
        }
     }
 </script>

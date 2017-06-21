@@ -25,7 +25,7 @@
 
 .icon-gouwuche:before { content: "\e654";font-size:1rem;color:#fff;border-radius: 50%;}
 
-.icon-iconfontwohover:before { content: "\e60d"; font-size:2rem;}
+.icon-iconfontwohover:before { content: "\e60d"; font-size:0.6rem;}
 
 .icon-dingwei:before { content: "\e604";font-size:0.6rem;color:#fff; }
 

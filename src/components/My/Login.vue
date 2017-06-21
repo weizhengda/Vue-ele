@@ -5,22 +5,50 @@
      </section>
     <form>
         <label>
-            <input type="text" name="account" value="" placeholder="手机号">
+            <input type="text" name="account" value="" placeholder="手机号" v-model="u_phone">
             <a href="">获取验证码</a>
         </label>
         <label>
-            <input type="password" name="account" value="" placeholder="验证码">
+            <input type="password" name="account" value="" placeholder="验证码" v-model="u_pwd">
         </label>
         <label>
            <span>温馨提示，未注册饿了么账号的手机号，登录时讲自动注册，且代表您以同意<a href="">《用户服务协议》</a></span>
         </label>
         <label>
-            <input type="submit" value="登录">
+            <input type="submit" @click="request()" value="登录">
         </label>
     </form>
   </div>
 </template>
+<script>
+    export default{
+        
+         data : function(){
+            return{
+                u_phone:'',
+                u_pwd:''
+            }
 
+        },
+        methods:{
+         
+          request(){
+              var _that=this;
+              var u_phone = _that.u_phone;
+              var u_pwd = _that.u_pwd;
+              console.log(u_phone);
+              var url='localhost:4000/user'+u_phone&&u_pwd;
+              this.$http.jsonp(url,{jsonp:"_callback"}).then((res)=>{
+                  console.log(res);
+              },(err)=>{
+                  console.log(err);
+              })
+          }
+          }
+
+        }
+
+</script>
 <style scoped>
     .head a{
         position:absolute;

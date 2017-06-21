@@ -21,11 +21,16 @@
              <router-link to="">下载饿了么APP</router-link>
         </div>
      <div class="footer">
-      <router-link to="/waimai">外卖</router-link>
-      <router-link to="/find">发现</router-link>
-      <router-link to="/order">订单</router-link>
-      <router-link to="/my">我的</router-link>
-   </div>
+    
+            <router-link to="/waimai"><i class="icon iconfont icon-changyonglogo40"></i><span>外卖</span></router-link>
+    
+            <router-link to="/find"><i class="icon iconfont icon-444"></i><span>发现</span></router-link>
+    
+           <router-link to="/order"><i class="icon iconfont icon-order"></i><span>订单</span></router-link>
+    
+            <router-link to="/my"><i class="icon iconfont icon-iconfontwohover"></i><span>我的</span></router-link>
+    
+        </div>
     </div>
 </template>
 
