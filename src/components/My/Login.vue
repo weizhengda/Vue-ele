@@ -21,8 +21,10 @@
   </div>
 </template>
 <script>
+
+  import store from '../../store/store.js';
   export default{
-        
+    
          data : function(){
             return{
                 u_phone:'15083603396',
@@ -41,12 +43,17 @@
               console.log(url);
               this.$http.jsonp(url).then((res)=>{
                   console.log(res);
+                 if(res.body.result=="登录成功！"){
+                  store.commit('addUser',res.body.data);
+                  console.log(store.state.user[0].u_name);
+                  this.$router.push('/my');
+                 }
               },(err)=>{
                   console.log(err);
               })
           }
         }
- 
+
         }
 
 </script>

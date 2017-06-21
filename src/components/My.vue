@@ -7,8 +7,8 @@
             <router-link to="/login">
                 <i class="icon iconfont icon-iconfontwohover"></i>
                 <dl>
-                <dt>登录/注册</dt>
-                <dd>登录后享受更多特权</dd>
+                <dt>{{u_name}}</dt>
+                <dd>{{u_phone}}</dd>
                 </dl>
                 <em class="icon iconfont icon-jikediancanicon13"></em>
             </router-link>
@@ -35,23 +35,25 @@
 </template>
 
 <script>
+import store from '../store/store.js';
     export default{
         
         data(){
             return{
 
-                msg:'this is New'
+                msg:'this is New',
+                u_name:'登录/注册',
+                u_phone:'登录后享受更多特权',
             }
-
         },
         methods:{
-
 
         },computed:{
 
 
+        },mounted:function(){
+            console.log(store.state.user[0].u_name);
         }
-
     }
 
 
