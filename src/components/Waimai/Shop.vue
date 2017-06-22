@@ -8,7 +8,7 @@
            </div>
            <img src="../static/images/img1.jpeg" alt="">
            <ul>
-               <li><h2>台滋味（深圳西丽店）</h2></li>
+               <li><h2>{{shop.title}}（深圳西丽店）</h2></li>
                <li class="li2"><span>商家配送/40分钟送达/配送费￥9</span><a href="shop" class="icon iconfont icon-jikediancanicon13"></a></li>
                <li>公告：本餐厅使用饿了么配送</li>
            </ul>
@@ -48,7 +48,7 @@
              return{
                 isFav:false,
                 text:'收藏',
-                shop:"",
+                shop:{},
                 order:0
              };
         },
@@ -73,11 +73,12 @@
 
              var _that=this;
 
-              var url='http://127.0.0.1:4000/shop/_id='+_id;
+              var url='http://127.0.0.1:4000/shop?_id='+_id;
               console.log(_id);
               this.$http.jsonp(url).then((res)=>{
                     console.log(res.data);
                     _that.shop=res.data[0];
+                    console.log(_that.shop.title);
 
               },(err)=>{
                    console.log(err);
@@ -89,7 +90,7 @@
            
             console.log(this.$route.params._id);  /*获取动态路由的值*/
 
-            //this.requestData(this.$route.params._id);
+            this.requestData(this.$route.params._id);
         }
     }
 </script>

@@ -43,6 +43,11 @@
               this.$http.jsonp(url).then((res)=>{
                   console.log(res);
                  if(res.body.result=="登录成功！"){
+                  var user = sessionStorage.getItem('user');
+                  if(user.length==0){
+                       sessionStorage.setItem('user',JSON.stringify(res.body.data));
+                  }   
+                  console.log(JSON.parse(user)[0].u_phone);
                   this.$router.push('/my');
                  }
               },(err)=>{

@@ -41,8 +41,8 @@
             return{
 
                 msg:'this is New',
-                u_name:'登录/注册',
-                u_phone:'登录后享受更多特权',
+                u_name:'',
+                u_phone:''
             }
         },
         methods:{
@@ -51,7 +51,14 @@
 
 
         },mounted:function(){
-
+            var user = sessionStorage.getItem('user');
+            if(user){
+                this.u_name = JSON.parse(user)[0].u_name;
+                this.u_phone = JSON.parse(user)[0].u_phone;
+            }else{
+                this.u_name = '登录/注册';
+                this.u_phone = '登录后享受更多特权';
+            }
         }
     }
 
