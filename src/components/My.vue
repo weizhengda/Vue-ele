@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import store from '../store/store.js';
     export default{
         
         data(){
@@ -52,7 +51,7 @@ import store from '../store/store.js';
 
 
         },mounted:function(){
-            console.log(store.state.user[0].u_name);
+
         }
     }
 

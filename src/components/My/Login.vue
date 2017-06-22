@@ -22,7 +22,6 @@
 </template>
 <script>
 
-  import store from '../../store/store.js';
   export default{
     
          data : function(){
@@ -38,14 +37,12 @@
               var _that=this;
               var u_phone = _that.u_phone;
               var u_pwd = _that.u_pwd;
-                
+            
               var url='http://127.0.0.1:4000/user?u_phone='+u_phone+'&u_pwd='+u_pwd;
               console.log(url);
               this.$http.jsonp(url).then((res)=>{
                   console.log(res);
                  if(res.body.result=="登录成功！"){
-                  store.commit('addUser',res.body.data);
-                  console.log(store.state.user[0].u_name);
                   this.$router.push('/my');
                  }
               },(err)=>{
